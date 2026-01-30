@@ -22,25 +22,25 @@ export const HRMSProvider = ({ children }) => {
         history: []
     });
 
-    const punchIn = () => {
+    const punchIn = (log = '') => {
         const now = new Date();
         const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         setAttendance(prev => ({
             ...prev,
             status: 'present',
             punchInTime: timeStr,
-            history: [{ date: 'Today', in: timeStr, out: '-', status: 'Present' }, ...prev.history]
+            history: [{ date: 'Today', in: timeStr, out: '-', status: 'Present', log }, ...prev.history]
         }));
     };
 
-    const punchOut = () => {
+    const punchOut = (log = '') => {
         const now = new Date();
         const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
         setAttendance(prev => ({
             ...prev,
             status: 'punched_out',
             punchOutTime: timeStr,
-            history: prev.history.map((h, i) => i === 0 ? { ...h, out: timeStr } : h)
+            history: prev.history.map((h, i) => i === 0 ? { ...h, out: timeStr, log: log || h.log } : h)
         }));
     };
 

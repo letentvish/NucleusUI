@@ -7,6 +7,7 @@ import { useHRMS } from '@/context/HRMSContext';
 const AttendanceFAB = () => {
     const { attendance, punchIn, punchOut } = useHRMS();
     const [isExpanded, setIsExpanded] = useState(false);
+    const [logText, setLogText] = useState('');
 
     // Determine Color Class
     const getFabClass = () => {
@@ -73,12 +74,28 @@ const AttendanceFAB = () => {
 
                     <div className={styles.divider}></div>
 
+                    <textarea
+                        className={styles.logInput}
+                        placeholder={attendance.status === 'present' ? "Work summary or notes..." : "Plan for the day..."}
+                        value={logText}
+                        onChange={(e) => setLogText(e.target.value)}
+                        onClick={(e) => e.stopPropagation()}
+                    />
+
                     {attendance.status === 'present' ? (
-                        <button className={styles.actionBtnOut} onClick={(e) => { e.stopPropagation(); punchOut(); }}>
+                        <button className={styles.actionBtnOut} onClick={(e) => {
+                            e.stopPropagation();
+                            punchOut(logText);
+                            setLogText('');
+                        }}>
                             <XCircle size={16} /> Punch Out
                         </button>
                     ) : (
-                        <button className={styles.actionBtnIn} onClick={(e) => { e.stopPropagation(); punchIn(); }}>
+                        <button className={styles.actionBtnIn} onClick={(e) => {
+                            e.stopPropagation();
+                            punchIn(logText);
+                            setLogText('');
+                        }}>
                             <CheckCircle size={16} /> Punch In
                         </button>
                     )}

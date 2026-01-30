@@ -146,6 +146,27 @@
     width: 100%;
 }
 
+/* LOG INPUT */
+.logInput {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 0.8rem;
+    font-family: inherit;
+    resize: none;
+    min-height: 60px;
+    outline: none;
+    transition: border-color 0.2s;
+    background: #f8fafc;
+    color: #1e293b;
+}
+
+.logInput:focus {
+    border-color: #3b82f6;
+    background: #fff;
+}
+
 /* BUTTONS */
 .actionBtnIn,
 .actionBtnOut {
