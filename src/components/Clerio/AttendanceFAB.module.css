@@ -1,0 +1,198 @@
+.fabContainer {
+    position: fixed;
+    bottom: 2rem;
+    left: 2rem;
+    background: #3b82f6;
+    /* Default Blue */
+    box-shadow: 0 10px 25px -5px rgba(59, 130, 246, 0.4);
+    border-radius: 50px;
+    padding: 0.8rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    z-index: 1000;
+    overflow: hidden;
+    width: 60px;
+    /* Initial collapsed width */
+    height: 60px;
+}
+
+.fabContainer.expanded {
+    width: 320px;
+    height: auto;
+    min-height: 180px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    padding: 1.25rem;
+    align-items: flex-start;
+    /* Align icon to top */
+}
+
+.fabIcon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    position: relative;
+    /* When collapsed, white icon on blue bg. When expanded, blue icon handled below */
+}
+
+.expanded .fabIcon svg {
+    stroke: #2563ea;
+    /* Change icon color on expand */
+}
+
+.statusDot {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 10px;
+    height: 10px;
+    background: #22c55e;
+    border: 2px solid #3b82f6;
+    border-radius: 50%;
+}
+
+.expanded .statusDot {
+    border-color: #fff;
+    right: -2px;
+    top: -2px;
+}
+
+/* CONTENT CONTAINER */
+.fabContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding-right: 0.5rem;
+    animation: fadeIn 0.3s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.fabHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #f1f5f9;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.25rem;
+}
+
+.fabTitle {
+    font-size: 0.7rem;
+    font-weight: 700;
+    color: #64748b;
+    letter-spacing: 0.5px;
+}
+
+.fabDate {
+    font-size: 0.7rem;
+    color: #94a3b8;
+}
+
+.statsGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+}
+
+.statItem {
+    display: flex;
+    flex-direction: column;
+}
+
+.statLabel {
+    font-size: 0.65rem;
+    color: #94a3b8;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.statValue {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+.locationTag {
+    font-size: 0.75rem;
+    color: #64748b;
+    background: #f8fafc;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+    display: block;
+    text-align: center;
+}
+
+.divider {
+    height: 1px;
+    background: #f1f5f9;
+    width: 100%;
+}
+
+/* BUTTONS */
+.actionBtnIn,
+.actionBtnOut {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s;
+    width: 100%;
+}
+
+.actionBtnIn {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.actionBtnIn:hover {
+    background: #bbf7d0;
+}
+
+.actionBtnOut {
+    background: #fee2e2;
+    color: #b91c1c;
+}
+
+/* DYNAMIC COLORS */
+.fabBlue {
+    background: linear-gradient(135deg, #2563ea 0%, #3b82f6 100%);
+    box-shadow: 0 10px 25px -5px rgba(37, 99, 234, 0.4);
+}
+
+.fabGreen {
+    background: linear-gradient(135deg, #16a34a 0%, #22c55e 100%);
+    box-shadow: 0 10px 25px -5px rgba(22, 163, 74, 0.4);
+}
+
+.fabRed {
+    background: linear-gradient(135deg, #dc2626 0%, #ef4444 100%);
+    box-shadow: 0 10px 25px -5px rgba(220, 38, 38, 0.4);
+}
+
+.actionBtnOut:hover {
+    background: #fecaca;
+}

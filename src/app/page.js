@@ -1,66 +1,69 @@
-import Image from "next/image";
-import styles from "./page.module.css";
+"use client";
+import React, { useState } from 'react';
+import { Sparkles } from 'lucide-react';
+import TopNav from '@/components/Clerio/TopNav';
+import MainWorkspace from '@/components/Clerio/MainWorkspace';
+import AIPanel from '@/components/Clerio/AIPanel';
+import LoginView from '@/components/Clerio/LoginView';
+import { HRMSProvider, useHRMS } from '@/context/HRMSContext';
+import { useAuth } from '@/context/AuthContext';
+import styles from './page.module.css';
+import Toast from '@/components/Clerio/Toast';
+import toastStyles from '@/components/Clerio/Toast.module.css'; // Import for container
+
+// Inner component to consume context for Toasts and Auth
+const AppContent = () => {
+  const { user, isLoading } = useAuth();
+  const [isAIPanelOpen, setIsAIPanelOpen] = useState(false);
+  const [activeTab, setActiveTab] = useState('dashboard');
+
+  const { toasts, removeToast } = useHRMS();
+
+  if (isLoading) return <div className={styles.loading}>Loading...</div>;
+
+  if (!user) {
+    return <LoginView />;
+  }
+
+  return (
+    <main className={styles.mainContainer}>
+      <TopNav activeTab={activeTab} onTabChange={setActiveTab} />
+
+      <div className={styles.contentArea}>
+        {/* Workspace takes full width */}
+        <div className={styles.workspaceZone}>
+          <MainWorkspace activeTab={activeTab} onTabChange={setActiveTab} />
+        </div>
+
+        {/* AI Panel - Floating Drawer */}
+        <div className={`${styles.assistantZoneWrapper} ${isAIPanelOpen ? styles.open : ''}`}>
+          <AIPanel onClose={() => setIsAIPanelOpen(false)} onNavigate={setActiveTab} />
+        </div>
+
+        {/* FAB to Open AI Panel (only visible when closed) */}
+        <button
+          className={`${styles.aiFab} ${isAIPanelOpen ? styles.hidden : ''}`}
+          onClick={() => setIsAIPanelOpen(true)}
+          title="Open AI Assistant"
+        >
+          <Sparkles size={24} />
+        </button>
+      </div>
+
+      {/* GLOBAL TOAST CONTAINER */}
+      <div className={toastStyles.toastContainer}>
+        {toasts.map(t => (
+          <Toast key={t.id} {...t} onClose={removeToast} />
+        ))}
+      </div>
+    </main>
+  );
+};
 
 export default function Home() {
   return (
-    <div className={styles.page}>
-      <main className={styles.main}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className={styles.intro}>
-          <h1>To get started, edit the page.js file.</h1>
-          <p>
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className={styles.ctas}>
-          <a
-            className={styles.primary}
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className={styles.logo}
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className={styles.secondary}
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <HRMSProvider>
+      <AppContent />
+    </HRMSProvider>
   );
 }

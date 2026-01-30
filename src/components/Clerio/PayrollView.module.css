@@ -1,0 +1,284 @@
+.payrollContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADER */
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleBlock h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.titleBlock p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* OVERVIEW STATS */
+.statsRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.statCard {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.statLabel {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.statValue {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.statSub {
+    font-size: 0.85rem;
+    color: #16a34a;
+    font-weight: 600;
+}
+
+/* MAIN GRID */
+.mainGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.leftCol,
+.rightCol {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* CARD STYLES */
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cardHeader h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* SALARY CHART (Simple CSS representation) */
+.salaryChartContainer {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+}
+
+.donutChart {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: conic-gradient(#3b82f6 0% 60%,
+            #a855f7 60% 85%,
+            #f59e0b 85% 100%);
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.donutHole {
+    width: 100px;
+    height: 100px;
+    background: white;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.netPayLabel {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+.netPayVal {
+    font-size: 1rem;
+    font-weight: 800;
+    color: #1e293b;
+}
+
+.chartLegend {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.legendItem {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+}
+
+.legendLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #475569;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+
+.dotBase {
+    background: #3b82f6;
+}
+
+.dotHRA {
+    background: #a855f7;
+}
+
+.dotSpecial {
+    background: #f59e0b;
+}
+
+.legendValue {
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* EARNINGS LIST */
+.earningRow {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.75rem 0;
+    border-bottom: 1px solid #f1f5f9;
+    font-size: 0.95rem;
+}
+
+.earningRow:last-child {
+    border-bottom: none;
+}
+
+.earnLabel {
+    color: #475569;
+}
+
+.earnVal {
+    font-weight: 600;
+    color: #1e293b;
+}
+
+/* PAYSLIP LIST */
+.payslipList {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.payslipItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+}
+
+.slipInfo {
+    display: flex;
+    flex-direction: column;
+}
+
+.slipMonth {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.slipDate {
+    font-size: 0.8rem;
+    color: #64748b;
+}
+
+.btnSm {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    cursor: pointer;
+    background: white;
+    color: #3b82f6;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s;
+}
+
+.btnSm:hover {
+    background: #eff6ff;
+    border-color: #bfdbfe;
+}
+
+.btnPrimary {
+    background: linear-gradient(135deg, #3b82f6, #2563ea);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+}
+
+.btnPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 234, 0.3);
+}

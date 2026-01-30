@@ -1,0 +1,347 @@
+.navbar {
+    height: 80px;
+    /* Increased from 72px */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 2rem;
+    /* Increased padding */
+    background: rgba(255, 255, 255, 0.8);
+    /* Slightly more opaque */
+    backdrop-filter: blur(20px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+    z-index: 100;
+    justify-content: space-between;
+    gap: 2rem;
+    /* Add generous gap between major sections */
+}
+
+/* BRAND */
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    min-width: 180px;
+}
+
+.logoMark {
+    width: 42px;
+    /* Larger logo */
+    height: 42px;
+    background: linear-gradient(135deg, #2563ea, #7c3aed);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 10px rgba(37, 99, 234, 0.3);
+}
+
+.logoInner {
+    color: white;
+    font-weight: 800;
+    font-size: 1.4rem;
+}
+
+.brandName {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #1e293b;
+    letter-spacing: -0.02em;
+}
+
+/* SEARCH BAR */
+.searchBarWrapper {
+    flex: 2;
+    /* Give it more priority to grow */
+    max-width: 600px;
+    /* Increased from 400px */
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 1.25rem;
+    color: #64748b;
+    /* Darker for better visibility */
+    font-size: 1rem;
+    z-index: 1;
+}
+
+.searchInput {
+    width: 100%;
+    height: 48px;
+    /* Taller input */
+    background: rgba(255, 255, 255, 0.6);
+    border: 1px solid rgba(203, 213, 225, 0.8);
+    border-radius: 14px;
+    padding-left: 3rem;
+    /* More space for icon */
+    padding-right: 5rem;
+    font-family: inherit;
+    font-size: 1rem;
+    /* Larger text */
+    color: #1e293b;
+    transition: all 0.2s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.01);
+}
+
+.searchInput:focus {
+    outline: none;
+    background: white;
+    border-color: #3b82f6;
+    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.15);
+}
+
+.cmdShortcut {
+    position: absolute;
+    right: 1rem;
+    background: rgba(255, 255, 255, 0.8);
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    padding: 0.2rem 0.6rem;
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+}
+
+/* CENTER MENU */
+.centerMenu {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    /* Increased gap */
+    padding: 0.5rem 0.75rem;
+    background: rgba(255, 255, 255, 0.7);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.02);
+}
+
+.navItem {
+    width: 48px;
+    /* Larger hit area */
+    height: 48px;
+    border-radius: 12px;
+    border: none;
+    background: transparent;
+    color: #64748b;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.navItem:hover {
+    background: rgba(37, 99, 234, 0.08);
+    color: #2563ea;
+    transform: translateY(-1px);
+}
+
+.navItem.active {
+    background: rgba(37, 99, 234, 0.12);
+    color: #2563ea;
+}
+
+.activeDot {
+    position: absolute;
+    bottom: -4px;
+    width: 5px;
+    height: 5px;
+    background: #2563ea;
+    border-radius: 50%;
+    box-shadow: 0 0 8px rgba(37, 99, 234, 0.5);
+}
+
+/* ACTIONS */
+.actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    /* More breathing room */
+}
+
+.dropdownMenu {
+    position: absolute;
+    top: 120%;
+    right: 0;
+    width: 200px;
+    background: rgba(16, 18, 27, 0.95);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
+    padding: 0.5rem;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    z-index: 100;
+    animation: slideDown 0.2s ease-out;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.dropdownHeader {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #94a3b8;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-bottom: 0.25rem;
+}
+
+.dropdownItem {
+    display: block;
+    width: 100%;
+    text-align: left;
+    padding: 0.6rem 0.75rem;
+    color: #e2e8f0;
+    font-size: 0.85rem;
+    border-radius: 8px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.dropdownItem:hover {
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+.notificationItem {
+    padding: 0.75rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.notificationItem:last-child {
+    border-bottom: none;
+}
+
+.notificationItem strong {
+    display: block;
+    color: #e2e8f0;
+    font-size: 0.85rem;
+    margin-bottom: 0.2rem;
+}
+
+.notificationItem p {
+    color: #94a3b8;
+    font-size: 0.75rem;
+    margin: 0;
+}
+
+.iconBtn {
+    width: 48px;
+    /* Larger */
+    height: 48px;
+    border-radius: 14px;
+    border: 1px solid rgba(203, 213, 225, 0.5);
+    background: rgba(255, 255, 255, 0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.2s;
+}
+
+.iconBtn:hover {
+    background: white;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Primary Button (Quick Action) */
+.primaryBtn {
+    background: linear-gradient(135deg, #3b82f6, #2563ea);
+    color: white;
+    border: none;
+    box-shadow: 0 4px 10px rgba(37, 99, 234, 0.2);
+}
+
+.primaryBtn:hover {
+    background: linear-gradient(135deg, #2563ea, #1d4ed8);
+    color: white;
+    box-shadow: 0 6px 15px rgba(37, 99, 234, 0.35);
+}
+
+.icon {
+    color: #64748b;
+}
+
+.badge {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 10px;
+    height: 10px;
+    background: #ef4444;
+    border: 2px solid white;
+    border-radius: 50%;
+    box-shadow: 0 2px 4px rgba(239, 68, 68, 0.3);
+}
+
+.messageBadge {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.5rem 1rem;
+    /* Larger */
+    background: white;
+    border-radius: 100px;
+    border: 1px solid rgba(226, 232, 240, 0.8);
+    cursor: pointer;
+    transition: transform 0.2s;
+    height: 48px;
+}
+
+.messageBadge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.msgAvatar {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.msgText {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: #3b82f6;
+}
+
+.profile {
+    margin-left: 0.5rem;
+    cursor: pointer;
+}
+
+.avatar {
+    width: 48px;
+    /* Larger profile pic */
+    height: 48px;
+    border-radius: 50%;
+    border: 3px solid white;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+}
+
+.avatar:hover {
+    transform: scale(1.05);
+}

@@ -1,0 +1,277 @@
+.leaveContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    animation: fadeIn 0.3s ease-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* HEADER */
+.headerRow {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.titleBlock h2 {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    margin-bottom: 0.25rem;
+}
+
+.titleBlock p {
+    color: #64748b;
+    font-size: 0.95rem;
+}
+
+/* LEAVE BALANCES ROW */
+.balanceRow {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+}
+
+.balanceCard {
+    background: white;
+    border-radius: 20px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.02);
+    border: 1px solid rgba(255, 255, 255, 0.5);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.balInfo {
+    z-index: 2;
+}
+
+.balLabel {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.balValue {
+    font-size: 2.5rem;
+    font-weight: 800;
+    color: #1e293b;
+    line-height: 1;
+}
+
+.balTotal {
+    font-size: 0.8rem;
+    color: #94a3b8;
+    margin-top: 0.25rem;
+}
+
+.balIcon {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    opacity: 0.2;
+    position: absolute;
+    right: 1.5rem;
+    bottom: 1.5rem;
+}
+
+.cardSick {
+    background: #fee2e2;
+    color: #ef4444;
+}
+
+.cardCasual {
+    background: #ffedd5;
+    color: #f97316;
+}
+
+.cardPrivilege {
+    background: #dbeafe;
+    color: #3b82f6;
+}
+
+/* MAIN GRID */
+.mainGrid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 2rem;
+}
+
+.leftCol,
+.rightCol {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* SHARED CARD STYLES */
+.card {
+    background: white;
+    border-radius: 24px;
+    padding: 2rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.02);
+}
+
+.cardHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.cardHeader h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #1e293b;
+}
+
+/* APPLY FORM */
+.formGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.formGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.formLabel {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #475569;
+}
+
+.formInput,
+.formSelect {
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    color: #1e293b;
+    background: #f8fafc;
+}
+
+.formInput:focus,
+.formSelect:focus {
+    outline: none;
+    border-color: #3b82f6;
+    background: white;
+}
+
+.formTextarea {
+    width: 100%;
+    height: 100px;
+    padding: 0.75rem;
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    font-size: 0.9rem;
+    color: #1e293b;
+    background: #f8fafc;
+    resize: none;
+}
+
+.alertBox {
+    background: #f0f9ff;
+    border: 1px solid #bae6fd;
+    padding: 1rem;
+    border-radius: 12px;
+    display: flex;
+    gap: 0.75rem;
+    font-size: 0.9rem;
+    color: #0369a1;
+    margin-bottom: 1.5rem;
+}
+
+.btnPrimary {
+    background: linear-gradient(135deg, #3b82f6, #2563ea);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 12px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 100%;
+}
+
+.btnPrimary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 234, 0.3);
+}
+
+/* LEAVE HISTORY */
+.historyItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+    border-left: 4px solid transparent;
+}
+
+.statusPending {
+    border-left-color: #f59e0b;
+}
+
+.statusApproved {
+    border-left-color: #16a34a;
+}
+
+.statusRejected {
+    border-left-color: #ef4444;
+}
+
+.histType {
+    font-weight: 700;
+    color: #1e293b;
+    font-size: 0.95rem;
+}
+
+.histDate {
+    font-size: 0.85rem;
+    color: #64748b;
+    margin-top: 0.2rem;
+}
+
+.histBadge {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 6px;
+    font-weight: 700;
+    text-transform: uppercase;
+}
+
+.badgePending {
+    background: #fef3c7;
+    color: #d97706;
+}
+
+.badgeApproved {
+    background: #dcfce7;
+    color: #15803d;
+}
