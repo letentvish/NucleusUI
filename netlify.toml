@@ -1,3 +1,3 @@
 [build]
-command = "npx next build"
-publish = "out"
+  command = "npx next build"
+  # No publish = "out" - letting @netlify/plugin-nextjs handle it
