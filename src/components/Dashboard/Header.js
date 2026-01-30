@@ -38,11 +38,11 @@ const Header = () => {
 
                 <div className={styles.profile}>
                     <img
-                        src="https://ui-avatars.com/api/?name=Vishal&background=8B5CF6&color=fff"
+                        src="https://ui-avatars.com/api/?name=Trisha&background=8B5CF6&color=fff"
                         alt="Profile"
                         className={styles.avatar}
                     />
-                    <span className={styles.profileName}>Vishal</span>
+                    <span className={styles.profileName}>Trisha</span>
                 </div>
             </div>
         </header>

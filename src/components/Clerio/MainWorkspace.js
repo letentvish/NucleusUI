@@ -36,14 +36,14 @@ const MainWorkspace = ({ activeTab, onTabChange }) => {
                     <div className={styles.heroLeft}>
                         <div className={styles.heroAvatarWrapper}>
                             <img
-                                src="https://ui-avatars.com/api/?name=Vishal&background=fff&color=2563ea"
+                                src="https://ui-avatars.com/api/?name=Trisha&background=fff&color=2563ea"
                                 className={styles.heroAvatar}
-                                alt="Vishal"
+                                alt="Trisha"
                             />
                             <div className={styles.heroOnline}></div>
                         </div>
                         <div className={styles.heroText}>
-                            <h1>Good Morning, Vishal!</h1>
+                            <h1>Good Morning, Trisha!</h1>
                             <p>Ready to make today productive?</p>
                             <div className={styles.aiInsight}>
                                 <Sparkles size={18} color="#fbbf24" fill="#fbbf24" />
@@ -378,7 +378,7 @@ const MainWorkspace = ({ activeTab, onTabChange }) => {
             {activeTab !== 'dashboard' && (
                 <div className={styles.headerContext}>
                     <div className={styles.titleBlock}>
-                        <span className={styles.subtitle}>Welcome back, Vishal</span>
+                        <span className={styles.subtitle}>Welcome back, Trisha</span>
                         <h1>{activeTab.replace(/^\w/, (c) => c.toUpperCase())}</h1>
                     </div>
                 </div>

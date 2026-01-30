@@ -8,9 +8,9 @@ export const useHRMS = () => useContext(HRMSContext);
 export const HRMSProvider = ({ children }) => {
     // --- USER PROFILE ---
     const [user, setUser] = useState({
-        name: 'Vishal Singh',
+        name: 'Trisha Khanna',
         role: 'Senior Developer',
-        avatar: 'https://ui-avatars.com/api/?name=Vishal&background=fff&color=2563ea'
+        avatar: 'https://ui-avatars.com/api/?name=Trisha+Khanna&background=fff&color=2563ea'
     });
 
     // --- ATTENDANCE STATE ---
@@ -81,14 +81,14 @@ export const HRMSProvider = ({ children }) => {
             { id: 't2', title: 'Create Icon Set', tag: 'Design', assignee: 'Sarah' }
         ],
         inprogress: [
-            { id: 't3', title: 'Homepage Hero Implementation', tag: 'Dev', assignee: 'Vishal' },
+            { id: 't3', title: 'Homepage Hero Implementation', tag: 'Dev', assignee: 'Trisha' },
             { id: 't4', title: 'Dark Mode Palette', tag: 'Design', assignee: 'Sarah' }
         ],
         review: [
             { id: 't5', title: 'Auth API Integration', tag: 'Dev', assignee: 'David' }
         ],
         done: [
-            { id: 't6', title: 'Kickoff Meeting', tag: 'Planning', assignee: 'Vishal' }
+            { id: 't6', title: 'Kickoff Meeting', tag: 'Planning', assignee: 'Trisha' }
         ]
     });
 
@@ -117,7 +117,7 @@ export const HRMSProvider = ({ children }) => {
 
     // --- 5. TEAM STATE ---
     const [teamMembers] = useState([
-        { id: 1, name: 'Vishal', role: 'Senior Developer', dept: 'Engineering', status: 'online', bg: '2563ea' },
+        { id: 1, name: 'Trisha', role: 'Senior Developer', dept: 'Engineering', status: 'online', bg: '2563ea' },
         { id: 2, name: 'Sarah', role: 'Product Manager', dept: 'Product', status: 'busy', bg: 'db2777' },
         { id: 3, name: 'Rahul', role: 'UX Designer', dept: 'Design', status: 'away', bg: 'ea580c' },
         { id: 4, name: 'Priya', role: 'Frontend Dev', dept: 'Engineering', status: 'online', bg: '16a34a' },

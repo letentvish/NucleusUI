@@ -22,11 +22,11 @@ const SettingsView = () => {
                 </div>
                 <div className={styles.formGroup}>
                     <label className={styles.label}>Full Name</label>
-                    <input type="text" defaultValue="Vishal Singh" className={styles.input} />
+                    <input type="text" defaultValue="Trisha Khanna" className={styles.input} />
                 </div>
                 <div className={styles.formGroup}>
                     <label className={styles.label}>Email Address</label>
-                    <input type="email" defaultValue="vishal.singh@nucleus.ai" className={styles.input} />
+                    <input type="email" defaultValue="trisha.khanna@nucleus.ai" className={styles.input} />
                 </div>
                 <div className={styles.formGroup}>
                     <label className={styles.label}>Job Title</label>

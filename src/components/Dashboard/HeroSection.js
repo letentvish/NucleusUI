@@ -10,8 +10,8 @@ const HeroSection = () => {
                 <div className={styles.greetingGroup}>
                     <div className={styles.avatarWrapper}>
                         <img
-                            src="https://ui-avatars.com/api/?name=Vishal&background=8B5CF6&color=fff&size=128"
-                            alt="Vishal"
+                            src="https://ui-avatars.com/api/?name=Trisha&background=8B5CF6&color=fff&size=128"
+                            alt="Trisha"
                             className={styles.heroAvatar}
                         />
                         <div className={styles.onlineStatus}></div>
@@ -21,7 +21,7 @@ const HeroSection = () => {
                     </div>
 
                     <div className={styles.greetingText}>
-                        <h1>Good Morning, Vishal! 🌅</h1>
+                        <h1>Good Morning, Trisha! 🌅</h1>
                         <p>Ready to make today productive?</p>
 
                         <div className={`${styles.aiInsight} glass-card`}>
